@@ -69,7 +69,7 @@ public class AccountRepository
             preparedStatement.setString(1, account.getAccountNumber());
             preparedStatement.setString(2, account.getAccountHolderName());
             preparedStatement.setDouble(3, account.getBalance());
-            preparedStatement.setDouble(4, account.getCustomer().getCustomerId());
+            preparedStatement.setInt(4,account.getCustomerId());
             System.out.println("  Account created  data successfully .. : " + account);
 
             int rowsInserted = preparedStatement.executeUpdate();
@@ -90,7 +90,7 @@ public class AccountRepository
             preparedStatement.setString(1, account.getAccountNumber());
             preparedStatement.setString(2, account.getAccountHolderName());
             preparedStatement.setDouble(3, account.getBalance());
-            preparedStatement.setInt(4,account.getCustomer().getCustomerId());
+            preparedStatement.setInt(4, account.getCustomerId());
 
 
             System.out.println("updating  Account data to table: " + account);
@@ -128,7 +128,7 @@ public class AccountRepository
             preparedStatement.setString(1, account.getAccountNumber());
             preparedStatement.setString(2, account.getAccountHolderName());
             preparedStatement.setDouble(3, account.getBalance());
-            preparedStatement.setInt(4, account.getCustomer().getCustomerId());
+            preparedStatement.setInt(4, account.getCustomerId());
 
             System.out.println("Deposit Money successfully .... : " + account);
 
@@ -148,7 +148,7 @@ public class AccountRepository
         return false;
     }
 
-
+/*
     // Method to update user data into the database
         public boolean updatedepositMoney(Account account) throws SQLException {
             this.initConnection();
@@ -159,7 +159,7 @@ public class AccountRepository
                 preparedStatement.setString(1, account.getAccountNumber());
                 preparedStatement.setString(2, account.getAccountHolderName());
                 preparedStatement.setDouble(3, account.getBalance());
-                preparedStatement.setDouble(4, account.getCustomer().getCustomerId());
+                preparedStatement.setInt(4, account.getCustomerId());
 
                 System.out.println("updating  Deposit Money Account data to table: " + account);
 
@@ -192,7 +192,7 @@ public class AccountRepository
             preparedStatement.setString(1, account.getAccountNumber());
             preparedStatement.setString(2, account.getAccountHolderName());
             preparedStatement.setDouble(3, account.getBalance());
-            preparedStatement.setInt(4, account.getCustomer().getCustomerId());
+            preparedStatement.setInt(4, account.getCustomerId());
             System.out.println("  Account created  data successfully .. : " + account);
 
             System.out.println("Withdraw Amount successfully .. : " + account);
@@ -224,7 +224,7 @@ public class AccountRepository
             preparedStatement.setString(1, account.getAccountNumber());
             preparedStatement.setString(2, account.getAccountHolderName());
             preparedStatement.setDouble(3, account.getBalance());
-            preparedStatement.setDouble(4, account.getCustomer().getCustomerId());
+            preparedStatement.setDouble(4, account.getCustomerId());
 
             System.out.println("Withdraw Money Sucessfully........: " + account);
 
@@ -284,7 +284,7 @@ public class AccountRepository
         try (PreparedStatement preparedStatement = connection.prepareStatement(query )) {
 
             preparedStatement.setString(1, account.getAccountNumber());
-            preparedStatement.setInt(2,account.getCustomer().getCustomerId());
+            preparedStatement.setInt(2,account.getCustomerId());
             System.out.println("Balance Check successfully .. : " + account);
 
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -298,7 +298,7 @@ public class AccountRepository
             e.printStackTrace();
         }
         return false;
-    }
+    }*/
 //==================================================================
     //==========================retrieveAccount==============
     //===========================================================

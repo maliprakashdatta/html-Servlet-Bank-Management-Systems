@@ -23,6 +23,12 @@ public class AccountService {
         return true;
 
     }
+//
+//    Customer customer;
+//
+//    {
+//        customer = CUSTOMER_REPOSITORY.retrieveCustomer(customer.getCustomerId());
+//    }
 
     public List<Account> retrieveAccount() {
         return (List<Account>) ACCOUNT_REPOSITORY.retrieveAccount();
@@ -40,6 +46,8 @@ public class AccountService {
         return true;
 
     }
+
+/*
 
 //===================Withdraw Amount =================================
 
@@ -87,6 +95,7 @@ public class AccountService {
 
 
     }
+*/
 
 }
 

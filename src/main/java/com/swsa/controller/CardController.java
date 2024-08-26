@@ -11,12 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardController extends HttpServlet {
-    private String message;
 
     private CardService cardService = new CardService();
 
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         System.out.println("--------------- inside the doGet() method ---------------");
         List<Card> cardList = new ArrayList<>();
         try {
@@ -51,7 +50,7 @@ public class CardController extends HttpServlet {
         out.println("</body></html>");
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         System.out.println("--------------- inside the doGet() method ---------------");
         String cardId= request.getParameter("cardId");
         String cardNo = request.getParameter("cardNo");

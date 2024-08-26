@@ -10,22 +10,33 @@
         <welcome-file-list>
             <welcome-file>index.html</welcome-file>
         </welcome-file-list>
+
         <servlet>
-            <servlet-name>helloServlet</servlet-name>
-            <servlet-class>com.kodtodya.practice.web.servlet.HelloServlet</servlet-class>
+            <servlet-name>CardController</servlet-name>
+            <servlet-class>com.swsa.controller.CardController</servlet-class>
         </servlet>
         <servlet-mapping>
-            <servlet-name>helloServlet</servlet-name>
-            <url-pattern>/hello-servlet</url-pattern>
+            <servlet-name>CardController</servlet-name>
+            <url-pattern>/CardController</url-pattern>
         </servlet-mapping>
-        <servlet>
-            <servlet-name>studentController</servlet-name>
-            <servlet-class>com.kodtodya.practice.web.controller.StudentController</servlet-class>
-        </servlet>
-        <servlet-mapping>
-            <servlet-name>studentController</servlet-name>
-            <url-pattern>/studentController</url-pattern>
-        </servlet-mapping>
+
+          <servlet>
+        <servlet-name>CustomerController</servlet-name>
+        <servlet-class>com.swsa.controller.CustomerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerController</servlet-name>
+        <url-pattern>/CustomerController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AccountController</servlet-name>
+        <servlet-class>com.swsa.controller.AccountController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AccountController</servlet-name>
+        <url-pattern>/AccountController</url-pattern>
+    </servlet-mapping>
 </web-app>
 
 

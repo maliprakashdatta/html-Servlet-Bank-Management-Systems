@@ -7,6 +7,7 @@ import com.swsa.repository.CardRepository;
 public class CardService {
 
     private static final CardRepository CARD_REPOSITORY = new CardRepository();
+
     public boolean insertCard(Card card)throws SQLException {
         if (CARD_REPOSITORY.insertCard(card)) {
             System.out.println("Card inserted successfully!");
