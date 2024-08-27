@@ -58,121 +58,121 @@ public class AccountRepository
         return accounts;
     }
 
-
-    // Method to update user data into the database
-    public boolean insertAccount(Account account) throws SQLException {
-        this.initConnection();
-        //   int amount = 0;
-        String query = "INSERT INTO account VALUES (?, ?, ?, ?)";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-
-            preparedStatement.setString(1, account.getAccountNumber());
-            preparedStatement.setString(2, account.getAccountHolderName());
-            preparedStatement.setDouble(3, account.getBalance());
-            preparedStatement.setInt(4,account.getCustomerId());
-            System.out.println("  Account created  data successfully .. : " + account);
-
-            int rowsInserted = preparedStatement.executeUpdate();
-            return rowsInserted > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-
-    // Method to update user data into the database
-    public boolean updateAccount(Account account) throws SQLException {
-        this.initConnection();
-
-        String query = "UPDATE account SET   AccountNumber= ?, AccountHolderName= ?, Balance= ?, CustomerId=?";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setString(1, account.getAccountNumber());
-            preparedStatement.setString(2, account.getAccountHolderName());
-            preparedStatement.setDouble(3, account.getBalance());
-            preparedStatement.setInt(4, account.getCustomerId());
-
-
-            System.out.println("updating  Account data to table: " + account);
-
-            int rowsInserted = preparedStatement.executeUpdate();
-
-            return rowsInserted > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-
-
-
-
-}
-
-    public Object insertAccount(int customerId) {
-        return null;
-    }
+//
+//    // Method to update user data into the database
+//    public boolean insertAccount(Account account) throws SQLException {
+//        this.initConnection();
+//        //   int amount = 0;
+//        String query = "INSERT INTO account VALUES (?, ?, ?, ?)";
+//        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+//
+//            preparedStatement.setString(1, account.getAccountNumber());
+//            preparedStatement.setString(2, account.getAccountHolderName());
+//            preparedStatement.setDouble(3, account.getBalance());
+//            preparedStatement.setInt(4,account.getCustomerId());
+//            System.out.println("  Account created  data successfully .. : " + account);
+//
+//            int rowsInserted = preparedStatement.executeUpdate();
+//            return rowsInserted > 0;
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return false;
+//    }
+//
+//
+//    // Method to update user data into the database
+//    public boolean updateAccount(Account account) throws SQLException {
+//        this.initConnection();
+//
+//        String query = "UPDATE account SET   AccountNumber= ?, AccountHolderName= ?, Balance= ?, CustomerId=?";
+//        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+//            preparedStatement.setString(1, account.getAccountNumber());
+//            preparedStatement.setString(2, account.getAccountHolderName());
+//            preparedStatement.setDouble(3, account.getBalance());
+//            preparedStatement.setInt(4, account.getCustomerId());
+//
+//
+//            System.out.println("updating  Account data to table: " + account);
+//
+//            int rowsInserted = preparedStatement.executeUpdate();
+//
+//            return rowsInserted > 0;
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return false;
+//
+//
+//
+//
+//}
+//
+//    public Object insertAccount(int customerId) {
+//        return null;
+//    }
 
 //============================================================================
     //---------------DEPOSIT ACOUNT-----------------------------
 //=============================================================================
-
-
-
-    // Method to update user data into the database
-    public boolean insertdepositMoney(Account account) throws SQLException {
-        this.initConnection();
-        int amount = 0;
-        String query = "INSERT INTO account VALUES (?, ?,?,?)";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-
-            preparedStatement.setString(1, account.getAccountNumber());
-            preparedStatement.setString(2, account.getAccountHolderName());
-            preparedStatement.setDouble(3, account.getBalance());
-            preparedStatement.setInt(4, account.getCustomerId());
-
-            System.out.println("Deposit Money successfully .... : " + account);
-
-            int rowsInserted = preparedStatement.executeUpdate();
-            if (amount > 0) {
-                account.setBalance(account.getBalance() + amount);
-                System.out.println("Deposited $" + amount + " into account " + account.getAccountNumber());
-            } else {
-                System.out.println("Deposit amount must be positive.");
-            }
-            return rowsInserted > 0;
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-/*
-    // Method to update user data into the database
-        public boolean updatedepositMoney(Account account) throws SQLException {
-            this.initConnection();
-
-            String query = "UPDATE account  SET   AccountNumber= ?,AccountHolderName(),Balance = Amount +  ?, CustomerId=?";
-            try (PreparedStatement preparedStatement = connection.prepareStatement(query))
-            {
-                preparedStatement.setString(1, account.getAccountNumber());
-                preparedStatement.setString(2, account.getAccountHolderName());
-                preparedStatement.setDouble(3, account.getBalance());
-                preparedStatement.setInt(4, account.getCustomerId());
-
-                System.out.println("updating  Deposit Money Account data to table: " + account);
-
-                int rowsInserted = preparedStatement.executeUpdate();
-
-               return rowsInserted > 0;
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            return false;
-        }
-
-
+//
+//
+//
+//    // Method to update user data into the database
+//    public boolean deposit(Account account) throws SQLException {
+//        this.initConnection();
+//        int amount = 0;
+//        String query = "INSERT INTO account VALUES (?,?,?,?)";
+//        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+//
+//            preparedStatement.setString(1, account.getAccountNumber());
+//            preparedStatement.setString(2, account.getAccountHolderName());
+//            preparedStatement.setDouble(3, account.getBalance());
+//            preparedStatement.setInt(4, account.getCustomerId());
+//
+//            System.out.println("Deposit Money successfully .... : " + account);
+//
+//            int rowsInserted = preparedStatement.executeUpdate();
+//            if (amount > 0) {
+//                account.setBalance(account.getBalance() + amount);
+//                System.out.println("Deposited $" + amount + " into account " + account.getAccountNumber());
+//            } else {
+//                System.out.println("Deposit amount must be positive.");
+//            }
+//            return rowsInserted > 0;
+//
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return false;
+//    }
+//
+//
+//    // Method to update user data into the database
+//        public boolean updatedeposit(Account account) throws SQLException {
+//            this.initConnection();
+//
+//            String query = "UPDATE account  SET   AccountNumber= ?,AccountHolderName(),Balance = Amount +  ?, CustomerId=?";
+//            try (PreparedStatement preparedStatement = connection.prepareStatement(query))
+//            {
+//                preparedStatement.setString(1, account.getAccountNumber());
+//                preparedStatement.setString(2, account.getAccountHolderName());
+//                preparedStatement.setDouble(3, account.getBalance());
+//                preparedStatement.setInt(4, account.getCustomerId());
+//
+//                System.out.println("updating  Deposit Money Account data to table: " + account);
+//
+//                int rowsInserted = preparedStatement.executeUpdate();
+//
+//               return rowsInserted > 0;
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//            return false;
+//        }
+//
+//
 
     //================================================================
     //---------------Withdraw Amount -----------------------------
@@ -183,9 +183,9 @@ public class AccountRepository
 
     // Method to update user data into the database
 
-    public boolean insertwithdrawMoney(Account account) throws SQLException {
+    public boolean withdraw(Account account) throws SQLException {
         this.initConnection();
-        int amount = 0;
+        //int amount = 0;
         String query = "INSERT INTO account VALUES (?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
@@ -197,14 +197,14 @@ public class AccountRepository
 
             System.out.println("Withdraw Amount successfully .. : " + account);
 
-            if (amount > 0 && account.getBalance() >= amount) {
-                account.setBalance(account.getBalance() - amount);
-                System.out.println("Withdrew $" + amount + " from account " + account.getAccountNumber());
-            } else if (amount > 0 && account.getBalance() < amount) {
-                System.out.println("Insufficient funds for withdrawal.");
-            } else {
-                System.out.println("Withdrawal amount must be positive.");
-            }
+//            if (amount > 0 && account.getBalance() >= amount) {
+//                account.setBalance(account.getBalance() - amount);
+//                System.out.println("Withdrew $" + amount + " from account " + account.getAccountNumber());
+//            } else if (amount > 0 && account.getBalance() < amount) {
+//                System.out.println("Insufficient funds for withdrawal.");
+//            } else {
+//                System.out.println("Withdrawal amount must be positive.");
+//            }
             int rowsInserted = preparedStatement.executeUpdate();
 
             return rowsInserted > 0;
@@ -238,7 +238,7 @@ public class AccountRepository
     }
 
 
-
+/*
 //=====================================================
 //----------------CHECK BALANCE-------------
 //===========================================================
