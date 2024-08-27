@@ -7,34 +7,34 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <h2>Deposit Money Form</h2>
-            <form action="/submit_address" method="post">
-               <div class="form-group">
+<div class="container">
+    <div class="form-container">
+        <h2>Deposit  Form</h2>
+        <form action="/BankManagementSystems/AccountController" method="post">
+            <div class="form-group">
 
-                    <label for="accountNumber">Account Number</label>
-                    <input type="text" class="form-control" id="accountNumber" name="accountNumber" placeholder="Enter Account Number" required>
-                </div>
+                <label for="accountNumber">Account Number</label>
+                <input type="text" class="form-control" id="accountNumber" name="accountNumber" placeholder="Enter Account Number" required>
+            </div>
 
 
-                <div class="form-group">
-                    <label for="accountHolderName">accountHolderName:</label>
-                    <input type="text" class="form-control" id="accountHolderName" name="accountHolderName" placeholder="Enter Account Holder Name" required>
-                </div>
+            <div class="form-group">
+                <label for="accountHolderName">accountHolderName:</label>
+                <input type="text" class="form-control" id="accountHolderName" name="accountHolderName" placeholder="Enter Account Holder Name" required>
+            </div>
 
-                <div class="form-group">
-                    <label for="amount">Deposit amount:</label>
-                    <input type="text" class="amount" id="amount" name="amount" placeholder="Enter Deposit amount" required>
-                </div>
-             <div class="form-group">
-                    <label for=" customerId"> CustomerId:</label>
-                    <input type="text" class=" customerId" id=" customerId" name=" customerId" placeholder="Enter  customerId" required>
-                </div>
+            <div class="form-group">
+                <label for="balance">Balance:(Fixed Amount:500Rs)</label>
+                <input type="text" class="balance" id="balance" name="balance" placeholder="Enter initial(Opening)deposit amount" required>
+            </div>
+            <div class="form-group">
+                <label for=" customerId"> CustomerId:</label>
+                <input type="text" class=" customerId" id=" customerId" name=" customerId" placeholder="Enter  customerId" required>
+            </div>
 
-                <input type="submit" class="btn btn-primary" value="Submit">
-            </form>
-        </div>
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
     </div>
+</div>
 </body>
 </html>
