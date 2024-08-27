@@ -74,6 +74,8 @@ public class CardController extends HttpServlet {
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
             out.println("<html><body>");
+
+
             if (isInserted) {
                 out.println("<h1> Card object inserted to db</h1>");
             } else {
@@ -82,6 +84,8 @@ public class CardController extends HttpServlet {
             out.println("</body></html>");
         } catch (SQLException e) {
             throw new RuntimeException(e);
+
+
         }
     }
 
