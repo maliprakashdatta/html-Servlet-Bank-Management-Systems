@@ -61,13 +61,12 @@ public  class AccountController extends HttpServlet {
         account.setAccountHolderName(accountHolderName);
         account.setBalance(balance);
         account.getCustomerId(customerId);
-
+  try {
         // boolean isInserted = accountService.insertAccount(account);
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
 
-        try {
         if (accountService.insertAccount(account)) {
             response.getWriter().println("<p>Account created successfully.</p>");
         } else {
